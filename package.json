@@ -1,0 +1,24 @@
+{
+  "name": "mercapez",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slqpez/websockets-pratice.git"
+  },
+  "author": "Santiago López & Alejandro Mercado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slqpez/websockets-pratice/issues"
+  },
+  "homepage": "https://github.com/slqpez/websockets-pratice#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "socket.io": "^2.3.0"
+  }
+}
