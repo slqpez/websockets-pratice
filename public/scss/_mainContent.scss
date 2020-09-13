@@ -2,6 +2,7 @@
   background: $bg-color;
   height: 600px;
   color: $text-color;
+  position: relative;
   display: flex;
   padding: 3em;
   padding-top: 6em;
@@ -23,7 +24,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
+      position: absolute;
+      left: 50%;
+      bottom: 120px;
+      transform: translateX(-50%);
       animation: move 1.5s infinite;
       transition: animation ease;
       img {
@@ -34,6 +38,10 @@
   }
   .main-image {
     width: 30%;
+    &:hover {
+      transform: rotate(10deg);
+      filter: hue-rotate(120deg);
+    }
     img {
       width: 100%;
     }
@@ -42,9 +50,9 @@
 
 @keyframes move {
   from {
-    top: 0px;
+    bottom: 120px;
   }
   to {
-    top: 50px;
+    bottom: 80px;
   }
 }

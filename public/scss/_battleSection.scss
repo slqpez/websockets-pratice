@@ -1,4 +1,76 @@
 .battle-section {
   background-color: $text-color;
-  height: 500px;
+  min-height: 700px;
+  height: auto;
+  padding: 3em;
+  .battles-title {
+    color: $bg-color;
+    font-size: 3em;
+    text-shadow: 1px 1px 4px black;
+    text-align: center;
+  }
+  .container {
+    margin: 0 auto;
+    padding: 40px 0;
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    height: auto;
+    border-radius: 10px;
+    border: 5px solid $bg-color;
+
+    .card-battle {
+      margin-top: 40px;
+      border-radius: 10px;
+      position: relative;
+      padding: 1.5em;
+      background-color: #003559;
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 50% 50%;
+      grid-template-areas:
+        "join1  join2"
+        "public  public";
+      justify-items: center;
+      .card-title {
+        color: $join-color;
+        position: absolute;
+        top: -40px;
+        font-size: 1.4em;
+        text-shadow: 1px 1px 2px black;
+      }
+      a {
+        text-decoration: none;
+        color: $text-color;
+      }
+      .join1 {
+        grid-area: join1;
+        background: $join-color;
+      }
+      .join2 {
+        grid-area: join2;
+      }
+      .join1,
+      .join2 {
+        background: $join-color;
+        padding: 10px;
+        border-radius: 10px;
+        &:hover {
+          background: rgba($join-color, $alpha: 0.7);
+        }
+      }
+      .public-join {
+        grid-area: public;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #006daa;
+        &:hover {
+          background: rgba(#006daa, $alpha: 0.7);
+        }
+      }
+    }
+  }
 }
