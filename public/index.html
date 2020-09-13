@@ -3,11 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,200&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="scss/main.css" />
     <title>Mercapez Free</title>
   </head>
   <body>
-    Página de inicio
+    <header class="header">
+      <div class="brand">
+        <img
+          src="https://fontmeme.com/permalink/200913/bef042adb186d0937ad7c011d0868427.png"
+          alt="brand"
+          border="0"
+        />
+      </div>
+      <nav class="navbar">
+        <ul class="list">
+          <li class="item"><a href="#">Home</a></li>
+          <li class="item"><a href="#battles">Batallas</a></li>
+          <li class="item"><a href="#contact">Contácto</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <div class="main-info">
+        <h1 class="main-title">
+          Batallas de gallos <br />
+          online
+        </h1>
+        <p class="main-text">
+          El lugar donde puedes mostrar todo tu talento. <br />Compite contra
+          los mejores desde la comodidad de tu casa.
+        </p>
+        <div class="flecha">
+          <a href="#battles"><img src="images/flecha.png" alt="" /></a>
+        </div>
+      </div>
+      <div class="main-image">
+        <img src="images/main.png" alt="" />
+      </div>
+    </main>
+    <section class="battle-section" id="battles"></section>
     <script src="js/index.js"></script>
   </body>
 </html>
