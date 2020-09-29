@@ -1,0 +1,49 @@
+.body-rooms {
+  background-color: $bg-color;
+  padding: 3em;
+  min-height: 100vh;
+  .tittle-room {
+    color: $text-color;
+    font-size: 3em;
+    text-align: center;
+    font-family: roboto, "Franklin Gothic Medium", "Arial Narrow", Arial,
+      sans-serif;
+    text-shadow: 5px 3px 2px black;
+  }
+  .container-room {
+    border: 5px solid $text-color;
+    margin-top: 1.5em;
+    width: 100%;
+    height: 550px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      background: url("../images/diablo.png") no-repeat;
+      background-size: contain;
+      border: 3px solid $text-color;
+      border-radius: 10px;
+      margin: 30px;
+
+      &:nth-last-child(1) {
+        align-self: flex-end;
+        background: violet;
+        background: url("../images/batman.png") no-repeat;
+        background-size: contain;
+      }
+    }
+
+    .video {
+      width: 400px;
+      height: 450px;
+      align-self: center;
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
