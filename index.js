@@ -5,7 +5,7 @@ const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 
 io.on("connection", (socket) => {
-  console.log("user connected");
+  console.log("a user connected");
 });
 
 http.listen(app.get("port"), () => {
