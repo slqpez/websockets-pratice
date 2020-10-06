@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js & node-sass --watch public/scss -o public/css ",
+    "dev": "peerjs --port 3001 & nodemon index.js & node-sass --watch public/scss -o public/css ",
     "start": "node index.js "
   },
   "repository": {
