@@ -330,27 +330,25 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
-.body-rooms .container-room .avatar {
-  width: 150px;
-  height: 150px;
-  background: url("../images/diablo.png") no-repeat;
-  background-size: contain;
-  border: 3px solid #b9d6f2;
+.body-rooms .container-room .player1 {
+  margin: 10px;
+  margin-left: 40px;
+  margin-right: 250px;
+  display: -ms-grid;
+  display: grid;
+}
+
+.body-rooms .container-room .player1 video {
+  width: 180px;
+  height: 180px;
+  margin: 15px;
+  background: black;
   border-radius: 10px;
-  margin: 30px;
-}
-
-.body-rooms .container-room .avatar:nth-last-child(1) {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  background: violet;
-  background: url("../images/batman.png") no-repeat;
-  background-size: contain;
+  border: 5px solid black;
+  -webkit-box-shadow: 2px 3px 2px 1px black;
+          box-shadow: 2px 3px 2px 1px black;
 }
 
 .body-rooms .container-room .video {

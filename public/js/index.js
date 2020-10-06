@@ -1,8 +1,3 @@
-const socket = io();
-
-io.on("connection", (socket) => {
-  console.log("test");
-  socket.on("disconnect", () => {
-    console.log("user disconnected");
-  });
-});
+const player1 = document.querySelector(".player1");
+const user1 = document.querySelector(".join1");
+const public = document.querySelector(".public-join");

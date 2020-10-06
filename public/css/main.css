@@ -1,83 +1,131 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif; }
 
 .header {
   background: #061a40;
   padding: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between; }
-  .header .brand {
-    width: 30%;
-    height: 40px; }
-    .header .brand img {
-      width: 100%;
-      height: 100%; }
-      .header .brand img:hover {
-        transform: scale(1.1); }
-  .header .navbar {
-    width: 30%;
-    margin-right: 2em; }
-    .header .navbar .list {
-      display: flex;
-      justify-content: space-between; }
-      .header .navbar .list .item {
-        list-style: none; }
-        .header .navbar .list .item a {
-          text-decoration: none;
-          color: #b9d6f2;
-          font-size: 1.2em;
-          display: block;
-          padding: 7px;
-          border-radius: 5px;
-          font-weight: 800;
-          border-bottom: 3px solid #0353a4; }
-          .header .navbar .list .item a:hover {
-            background: #0353a4;
-            transition: all 0.5s; }
+
+.header .brand {
+  width: 30%;
+  height: 40px; }
+
+.header .brand img {
+  width: 100%;
+  height: 100%; }
+
+.header .brand img:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1); }
+
+.header .navbar {
+  width: 30%;
+  margin-right: 2em; }
+
+.header .navbar .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.header .navbar .list .item {
+  list-style: none; }
+
+.header .navbar .list .item a {
+  text-decoration: none;
+  color: #b9d6f2;
+  font-size: 1.2em;
+  display: block;
+  padding: 7px;
+  border-radius: 5px;
+  font-weight: 800;
+  border-bottom: 3px solid #0353a4; }
+
+.header .navbar .list .item a:hover {
+  background: #0353a4;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
 
 .main {
   background: #061a40;
   height: 600px;
   color: #b9d6f2;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 3em;
   padding-top: 6em; }
-  .main .main-info {
-    width: 70%;
-    font-size: 1.5em;
-    text-align: center; }
-    .main .main-info .main-title {
-      text-shadow: 3px 3px 5px black; }
-    .main .main-info .main-text {
-      font-size: 0.9em;
-      text-shadow: 3px 3px 5px black; }
-    .main .main-info .flecha {
-      margin-top: 100px;
-      width: 100%;
-      height: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      left: 50%;
-      bottom: 120px;
-      transform: translateX(-50%);
-      animation: move 1.5s infinite;
-      transition: animation ease; }
-      .main .main-info .flecha img {
-        width: 15%;
-        height: 100%; }
-  .main .main-image {
-    width: 30%; }
-    .main .main-image:hover {
-      transform: rotate(10deg);
-      filter: hue-rotate(120deg); }
-    .main .main-image img {
-      width: 100%; }
+
+.main .main-info {
+  width: 70%;
+  font-size: 1.5em;
+  text-align: center; }
+
+.main .main-info .main-title {
+  text-shadow: 3px 3px 5px black; }
+
+.main .main-info .main-text {
+  font-size: 0.9em;
+  text-shadow: 3px 3px 5px black; }
+
+.main .main-info .flecha {
+  margin-top: 100px;
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  bottom: 120px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-animation: move 1.5s infinite;
+  animation: move 1.5s infinite;
+  -webkit-transition: -webkit-animation ease;
+  transition: -webkit-animation ease;
+  transition: animation ease;
+  transition: animation ease, -webkit-animation ease; }
+
+.main .main-info .flecha img {
+  width: 15%;
+  height: 100%; }
+
+.main .main-image {
+  width: 30%; }
+
+.main .main-image:hover {
+  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg);
+  -webkit-filter: hue-rotate(120deg);
+  filter: hue-rotate(120deg); }
+
+.main .main-image img {
+  width: 100%; }
+
+@-webkit-keyframes move {
+  from {
+    bottom: 120px; }
+  to {
+    bottom: 80px; } }
 
 @keyframes move {
   from {
@@ -90,63 +138,88 @@
   min-height: 700px;
   height: auto;
   padding: 3em; }
-  .battle-section .battles-title {
-    color: #061a40;
-    font-size: 3em;
-    text-shadow: 1px 1px 4px black;
-    text-align: center; }
-  .battle-section .container {
-    margin: 0 auto;
-    padding: 40px 0;
-    width: 100%;
-    min-height: 600px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    height: auto;
-    border-radius: 10px;
-    border: 5px solid #061a40; }
-    .battle-section .container .card-battle {
-      margin-top: 40px;
-      border-radius: 10px;
-      position: relative;
-      padding: 1.5em;
-      background-color: #003559;
-      display: grid;
-      gap: 10px;
-      grid-template-columns: 50% 50%;
-      grid-template-areas: "join1  join2" "public  public";
-      justify-items: center; }
-      .battle-section .container .card-battle .card-title {
-        color: #0353a4;
-        position: absolute;
-        top: -40px;
-        font-size: 1.4em;
-        text-shadow: 1px 1px 2px black; }
-      .battle-section .container .card-battle a {
-        text-decoration: none;
-        color: #b9d6f2; }
-      .battle-section .container .card-battle .join1 {
-        grid-area: join1;
-        background: #0353a4; }
-      .battle-section .container .card-battle .join2 {
-        grid-area: join2; }
-      .battle-section .container .card-battle .join1,
-      .battle-section .container .card-battle .join2 {
-        background: #0353a4;
-        padding: 10px;
-        border-radius: 10px; }
-        .battle-section .container .card-battle .join1:hover,
-        .battle-section .container .card-battle .join2:hover {
-          background: rgba(3, 83, 164, 0.7); }
-      .battle-section .container .card-battle .public-join {
-        grid-area: public;
-        padding: 10px;
-        border-radius: 10px;
-        background-color: #006daa; }
-        .battle-section .container .card-battle .public-join:hover {
-          background: rgba(0, 109, 170, 0.7); }
+
+.battle-section .battles-title {
+  color: #061a40;
+  font-size: 3em;
+  text-shadow: 1px 1px 4px black;
+  text-align: center; }
+
+.battle-section .container {
+  margin: 0 auto;
+  padding: 40px 0;
+  width: 100%;
+  min-height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 40px;
+  height: auto;
+  border-radius: 10px;
+  border: 5px solid #061a40; }
+
+.battle-section .container .card-battle {
+  margin-top: 40px;
+  border-radius: 10px;
+  position: relative;
+  padding: 1.5em;
+  background-color: #003559;
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
+  -ms-grid-columns: 50% 50%;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: "join1  join2" "public  public";
+  justify-items: center; }
+
+.battle-section .container .card-battle .card-title {
+  color: #0353a4;
+  position: absolute;
+  top: -40px;
+  font-size: 1.4em;
+  text-shadow: 1px 1px 2px black; }
+
+.battle-section .container .card-battle a {
+  text-decoration: none;
+  color: #b9d6f2; }
+
+.battle-section .container .card-battle .join1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: join1;
+  background: #0353a4; }
+
+.battle-section .container .card-battle .join2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: join2; }
+
+.battle-section .container .card-battle .join1,
+.battle-section .container .card-battle .join2 {
+  background: #0353a4;
+  padding: 10px;
+  border-radius: 10px; }
+
+.battle-section .container .card-battle .join1:hover,
+.battle-section .container .card-battle .join2:hover {
+  background: rgba(3, 83, 164, 0.7); }
+
+.battle-section .container .card-battle .public-join {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: public;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #006daa; }
+
+.battle-section .container .card-battle .public-join:hover {
+  background: rgba(0, 109, 170, 0.7); }
 
 .footer {
   height: 400px;
@@ -154,65 +227,89 @@
   padding: 3em;
   color: #b9d6f2;
   position: relative; }
-  .footer .brand-footer {
-    width: 500px;
-    height: 80px;
-    margin-bottom: 40px; }
-    .footer .brand-footer a img {
-      width: 100%;
-      height: 100%; }
-  .footer .trabajo {
-    margin-bottom: 30px; }
-  .footer .repo {
-    display: flex; }
-    .footer .repo img {
-      width: 30px;
-      height: 30px;
-      margin-left: 20px; }
-      .footer .repo img:hover {
-        transform: scale(1.2); }
-  .footer .derechos {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center; }
+
+.footer .brand-footer {
+  width: 500px;
+  height: 80px;
+  margin-bottom: 40px; }
+
+.footer .brand-footer a img {
+  width: 100%;
+  height: 100%; }
+
+.footer .trabajo {
+  margin-bottom: 30px; }
+
+.footer .repo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.footer .repo img {
+  width: 30px;
+  height: 30px;
+  margin-left: 20px; }
+
+.footer .repo img:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2); }
+
+.footer .derechos {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  text-align: center; }
 
 .body-rooms {
   background-color: #061a40;
   padding: 3em;
   min-height: 100vh; }
-  .body-rooms .tittle-room {
-    color: #b9d6f2;
-    font-size: 3em;
-    text-align: center;
-    font-family: roboto, "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    text-shadow: 5px 3px 2px black; }
-  .body-rooms .container-room {
-    border: 5px solid #b9d6f2;
-    margin-top: 1.5em;
-    width: 100%;
-    height: 550px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between; }
-    .body-rooms .container-room .avatar {
-      width: 150px;
-      height: 150px;
-      background: url("../images/diablo.png") no-repeat;
-      background-size: contain;
-      border: 3px solid #b9d6f2;
-      border-radius: 10px;
-      margin: 30px; }
-      .body-rooms .container-room .avatar:nth-last-child(1) {
-        align-self: flex-end;
-        background: violet;
-        background: url("../images/batman.png") no-repeat;
-        background-size: contain; }
-    .body-rooms .container-room .video {
-      width: 400px;
-      height: 450px;
-      align-self: center; }
-      .body-rooms .container-room .video iframe {
-        width: 100%;
-        height: 100%; }
+
+.body-rooms .tittle-room {
+  color: #b9d6f2;
+  font-size: 3em;
+  text-align: center;
+  font-family: roboto, "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-shadow: 5px 3px 2px black; }
+
+.body-rooms .container-room {
+  border: 5px solid #b9d6f2;
+  margin-top: 1.5em;
+  width: 100%;
+  height: 550px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.body-rooms .container-room .player1 {
+  margin: 10px;
+  margin-left: 40px;
+  margin-right: 250px;
+  display: -ms-grid;
+  display: grid; }
+
+.body-rooms .container-room .player1 video {
+  width: 180px;
+  height: 180px;
+  margin: 15px;
+  background: black;
+  border-radius: 10px;
+  border: 5px solid black;
+  -webkit-box-shadow: 2px 3px 2px 1px black;
+  box-shadow: 2px 3px 2px 1px black; }
+
+.body-rooms .container-room .video {
+  width: 400px;
+  height: 450px;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center; }
+
+.body-rooms .container-room .video iframe {
+  width: 100%;
+  height: 100%; }
+
+/*# sourceMappingURL=main.css.map */

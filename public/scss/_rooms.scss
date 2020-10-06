@@ -17,22 +17,20 @@
     height: 550px;
     border-radius: 10px;
     display: flex;
-    justify-content: space-between;
+    .player1 {
+      margin: 10px;
+      margin-left: 40px;
+      margin-right: 250px;
+      display: grid;
 
-    .avatar {
-      width: 150px;
-      height: 150px;
-      background: url("../images/diablo.png") no-repeat;
-      background-size: contain;
-      border: 3px solid $text-color;
-      border-radius: 10px;
-      margin: 30px;
-
-      &:nth-last-child(1) {
-        align-self: flex-end;
-        background: violet;
-        background: url("../images/batman.png") no-repeat;
-        background-size: contain;
+      video {
+        width: 180px;
+        height: 180px;
+        margin: 15px;
+        background: black;
+        border-radius: 10px;
+        border: 5px solid black;
+        box-shadow: 2px 3px 2px 1px black;
       }
     }
 
