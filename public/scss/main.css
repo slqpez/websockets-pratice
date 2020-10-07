@@ -331,12 +331,13 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .body-rooms .container-room .player1 {
   margin: 10px;
-  margin-left: 40px;
-  margin-right: 250px;
   display: -ms-grid;
   display: grid;
 }
@@ -363,5 +364,30 @@
 .body-rooms .container-room .video iframe {
   width: 100%;
   height: 100%;
+}
+
+.body-rooms .container-room .chat {
+  margin-right: 20px;
+  display: relative;
+}
+
+.body-rooms .container-room .chat #listado-msjs {
+  color: #b9d6f2;
+}
+
+.body-rooms .container-room .chat #env-msjs {
+  display: absolute;
+  bottom: 0;
+}
+
+.body-rooms .container-room .chat #env-msjs #nuevo-msj {
+  margin-top: 8px;
+  margin-right: 5px;
+  padding: 3px;
+}
+
+.body-rooms .container-room .chat #env-msjs #btn-msj {
+  border-radius: 10px;
+  padding: 5px;
 }
 /*# sourceMappingURL=main.css.map */
