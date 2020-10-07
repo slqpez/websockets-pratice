@@ -2,9 +2,17 @@ const socket = io("/");
 const player1 = document.querySelector(".player1");
 const youtube = document.querySelector(".youtube");
 
-youtube.addEventListener("canplay", () => {
+var countLimiterDecorator = function (fn, times) {
+  return function () {
+    return times-- > 0 ? fn.apply(this, arguments) : null;
+  };
+};
+
+showVideo = countLimiterDecorator(addVideoStream, 2);
+
+/* youtube.addEventListener("canplay", () => {
   youtube.srcObject = ds;
-});
+}); */
 
 const myPeer = new Peer({
   path: "/",
@@ -22,13 +30,13 @@ navigator.mediaDevices
     audio: true,
   })
   .then((stream) => {
-    addVideoStream(myVideo, stream);
+    showVideo(myVideo, stream);
 
     myPeer.on("call", (call) => {
       call.answer(stream);
       const video = document.createElement("video");
       call.on("stream", (userVideoStream) => {
-        addVideoStream(video, userVideoStream);
+        showVideo(video, userVideoStream);
       });
     });
 
@@ -48,9 +56,11 @@ myPeer.on("open", (id) => {
 function connectToNewUser(userId, stream) {
   const call = myPeer.call(userId, stream);
   const video = document.createElement("video");
+
   call.on("stream", (userVideoStream) => {
-    addVideoStream(video, userVideoStream);
+    showVideo(video, userVideoStream);
   });
+
   call.on("close", () => {
     video.remove();
   });
