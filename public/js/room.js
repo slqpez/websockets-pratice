@@ -6,9 +6,10 @@ youtube.addEventListener("canplay", () => {
   youtube.srcObject = ds;
 });
 
-const myPeer = new Peer(undefined, {
+const myPeer = new Peer({
+  path: "/",
   secure: true,
-  host: "https://peer-mercapez.herokuapp.com/",
+  host: "peer-mercapez.herokuapp.com",
   port: 443,
 });
 const myVideo = document.createElement("video");
