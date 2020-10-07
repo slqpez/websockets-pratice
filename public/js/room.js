@@ -8,8 +8,8 @@ youtube.addEventListener("canplay", () => {
 
 const myPeer = new Peer(undefined, {
   secure: true,
-  host: "https://tranquil-dawn-09072.herokuapp.com/",
-  port: "443",
+  host: "https://peer-mercapez.herokuapp.com/",
+  port: 443,
 });
 const myVideo = document.createElement("video");
 myVideo.muted = true;
