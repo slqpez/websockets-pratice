@@ -114,3 +114,13 @@ function addVideoStream(video, stream) {
   });
   player1.append(video);
 }
+
+socket.on('nuevo mensaje', function (msj) {
+  $('#listado-msjs').append($('<p>').text(msj));
+});
+
+
+function enviarMensaje() {
+  socket.emit('nuevo mensaje', $('#nuevo-msj').val());
+  $('#nuevo-msj').val('');
+};
