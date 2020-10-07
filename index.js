@@ -5,6 +5,11 @@ const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 
 io.on("connection", (socket) => {
+
+  socket.on('nuevo mensaje', function(msj) {
+    io.emit('nuevo mensaje', msj);
+  });
+
   socket.on("join-room", (roomId, userId) => {
     socket.join(roomId);
     socket.to(roomId).broadcast.emit("user-connected", userId);
