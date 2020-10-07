@@ -10,9 +10,28 @@ var countLimiterDecorator = function (fn, times) {
 
 showVideo = countLimiterDecorator(addVideoStream, 2);
 
-/* youtube.addEventListener("canplay", () => {
-  youtube.srcObject = ds;
-}); */
+let videos = [
+  "WXFFSPf3V7",
+  "7xEU0RZQy34",
+  "VVqRqjofAYg",
+  "y9jea0RE49E",
+  "8Ei0i-E7Emo",
+  "0cr-dQuBTRc",
+  "KEnO8i3lOuQ",
+  "bdFA9A_OxDw",
+  "p_UpCAxFOyU",
+  "b3008D8_OXc",
+];
+let max = 9;
+let min = 0;
+let randomVideo = Math.floor(Math.random() * (max - min) + min);
+console.log(videos[randomVideo]);
+console.log(randomVideo);
+console.log(videos);
+
+//
+
+//
 
 const myPeer = new Peer({
   path: "/",
@@ -20,6 +39,7 @@ const myPeer = new Peer({
   host: "peer-mercapez.herokuapp.com",
   port: 443,
 });
+
 const myVideo = document.createElement("video");
 myVideo.muted = true;
 
@@ -50,6 +70,25 @@ socket.on("user-disconnected", (userId) => {
 });
 
 myPeer.on("open", (id) => {
+  var tag = document.createElement("script");
+
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName("script")[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  function onPlayerReady(event) {
+    event.target.playVideo();
+  }
+  var done = false;
+  function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+      setTimeout(stopVideo, 6000);
+      done = true;
+    }
+  }
+  function stopVideo() {
+    player.stopVideo();
+  }
   socket.emit("join-room", ROOM_ID, id);
 });
 

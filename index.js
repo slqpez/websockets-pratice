@@ -5,12 +5,10 @@ const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 
 io.on("connection", (socket) => {
-  socket.on("join-room", (roomId, userId) => {
+  socket.on("join-room", (roomId, userId, video) => {
     socket.join(roomId);
     socket.to(roomId).broadcast.emit("user-connected", userId);
-    socket.on("vid", (video) => {
-      socket.to(roomId).broadcast.emit(video);
-    });
+    socket.to(roomId).broadcast.emit("youtube", video);
     socket.on("disconnect", () => {
       socket.to(roomId).broadcast.emit("user-disconnected", userId);
     });
