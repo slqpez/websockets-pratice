@@ -8,12 +8,15 @@ io.on("connection", (socket) => {
   socket.on("join-room", (roomId, userId) => {
     socket.join(roomId);
     socket.to(roomId).broadcast.emit("user-connected", userId);
-
+    socket.on("vid", (video) => {
+      socket.to(roomId).broadcast.emit(video);
+    });
     socket.on("disconnect", () => {
       socket.to(roomId).broadcast.emit("user-disconnected", userId);
     });
   });
 });
+
 http.listen(app.get("port"), () => {
   console.log(`Server runing on http://localhost:${app.get("port")}`);
 });

@@ -1,11 +1,15 @@
 const socket = io("/");
 const player1 = document.querySelector(".player1");
+const youtube = document.querySelector(".youtube");
 
-let countVideos = 0;
+youtube.addEventListener("canplay", () => {
+  youtube.srcObject = ds;
+});
 
 const myPeer = new Peer(undefined, {
-  host: "/",
-  port: "3001",
+  secure: true,
+  host: "https://mercapez.herokuapp.com/",
+  port: "443",
 });
 const myVideo = document.createElement("video");
 myVideo.muted = true;
